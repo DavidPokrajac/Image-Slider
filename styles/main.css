@@ -1,0 +1,146 @@
+::selection{
+	background-color: orchid;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Playfair Display', serif;
+	background-color: thistle;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img{
+	width: 120px;
+	height: 140px;
+	position: relative;
+	display: inline-block;
+	margin: 0 0.1em;
+	border-radius: 10px;
+}
+
+#wrapper{
+	height: 360px;
+	width: 80%;
+	display: grid;
+}
+
+#first-row{
+	grid-column: 1 / span 3;
+	grid-row: 1;
+	padding: 0.2em 0.1em;
+	position: relative;
+	right: 200px;
+}
+
+#first-row::after{
+	display: inline-block;
+	content: "";
+	width: 0px;                
+    border-top: 40px solid indigo;
+    border-left: 25px solid transparent;
+   	border-right: 25px solid transparent;
+   	position: relative;
+   	left: -6.5em;
+   	top: -11em;
+}
+
+#second-row{
+	grid-column: 1 / span 3;
+	grid-row: 2;
+	padding: 0.6em 0.1em;
+	position: relative;
+	right: 200px;
+}
+
+#second-row::after{
+	display: inline-block;
+	content: "";
+	width: 0px;                
+    border-bottom: 40px solid indigo;
+    border-left: 25px solid transparent;
+   	border-right: 25px solid transparent;
+   	position: relative;
+   	left: -14em;
+   	top: 3em;
+}
+
+#first-row img:last-of-type{
+	width: 150px;
+	height: 160px;
+	border: 3px solid indigo;
+}
+
+#second-row .ch:last-of-type{
+	width: 150px;
+	height: 160px;
+	border: 3px solid indigo;
+}
+
+#lorem{
+	grid-column: 4;
+	grid-row: 1 / span 2;
+	padding: 0.4em;
+	line-height: 1.8em;
+	position: relative;
+	right: 200px;
+	color: indigo;
+}
+
+h1{
+	font-style: italic;
+}
+
+h1:hover{
+	color: darkorchid;
+	transition: color 0.3s ease-out;
+}
+
+#arrows{
+	display: inline-block;
+	width: 85px;
+	height: 120px;
+	padding: 1em;
+}
+
+#arrows img{
+	display: block;
+	width: 15px;
+	height: 15px;
+	border: 1px solid indigo;
+	padding: 1em;
+	border-radius: 10px;
+}
+
+#arrows img:hover{
+	cursor: pointer;
+	border-radius: 50%;
+	border-color: darkorchid;
+	transition: all 0.2s;
+}
+
+#arrow-right{
+	position: relative;
+	left: 3em;
+	top: 4em;
+}
+
+#arrow-left{
+	position: relative;
+	top: 1em;
+	right: 0.7em;
+}
+
+#left{
+	font-weight: bold;
+	color: darkorchid;
+}
+
+#right{
+	font-weight: bold;
+	color: darkorchid;
+}
