@@ -1,120 +1,65 @@
 $(document).ready(function(){
 
-    $("#first-row img:last-of-type").attr("title", "Current picture in focus");
-    $("#second-row .ch:last-of-type").attr("title", "Current picture in focus");
-    
-    // Adding functionality when right arrow button is clicked
-    
-    $("#arrow-right").click(function(){ 
+    if($("#first-row img:last-of-type").html() === "<img id='f-five' src='./assets/4tB6jJkw.jpeg'>"){
+        $("#arrows #left-arrow").css({"opacity": "0.5"})
+    } 
 
-        var firstLast = $("#first-row img:last-of-type");
+    $("#arrows #right-arrow").click(function(){
 
-        firstLast.animate({left: "200px", opacity: "0"}, 300);
+        $("#first-row img:last-of-type").hide().prependTo("#first-row").fadeIn(600);
+        $("#first-row img").css({"margin": "0 4px"});
 
-        setTimeout(function(){
-            $(firstLast).prependTo("#first-row");
-            firstLast.animate({left: "-100px", opacity: "0"});
-            firstLast.animate({left: "0px", opacity: "1"});
-            
-            firstLast.css({
-                width: "120px",
-                height: "140px"
-            });
-            
-            $("#first-row img:last-of-type").css({width: "150px", height: "160px"});
-        }, 300);
+        $("#second-row img:last-of-type").hide().prependTo("#second-row").fadeIn(600);
+        $("#second-row img").css({"margin": "0 3px"});
 
-        var secondLast = $("#second-row .ch:last-of-type");
-
-        secondLast.animate({left: "200px", opacity: "0"}, 300);
-
-        setTimeout(function(){
-            $(secondLast).prependTo("#second-row");
-            secondLast.animate({left: "-100px", opacity: "0"});
-            secondLast.animate({left: "0px", opacity: "1"});
-            
-            secondLast.css({
-                width: "120px",
-                height: "140px"
-            });
-        
-            $("#second-row .ch:last-of-type").css({width: "150px", height: "160px"});
-        }, 300);
-
+        $("#arrows #left-arrow").css({"opacity": "1"});
+       
     });
 
-    // Adding functionality when left arrow button is clicked
-    
-    $("#arrow-left").click(function(){
-        var first = $("#first-row img:first-child");
-        
-        first.animate({right: "200px", opacity: "0"}, 300);
+    $("#arrows #left-arrow").click(function(){
 
-        setTimeout(function(){
-            first.animate({right: "-200px", opacity: "0"});
-            first.animate({right: "0px", opacity: "1"});
-            
-            $(first).appendTo("#first-row");
-            
-            $("#first-row img").css({
-                width: "120px",
-                height: "140px"}
-            );
-        
-            $("#first-row img:last-of-type").css({width: "150px", height: "160px"});
-        }, 300);
+        $("#first-row img:first-of-type").hide().appendTo("#first-row").fadeIn(600);
+        $("#first-row img").css({"margin": "0 4px"});
 
-        var secondLast = $("#second-row .ch:first-child");
-
-        secondLast.animate({right: "200px", opacity: "0"}, 300);
-
-        setTimeout(function(){
-            secondLast.animate({right: "-200px", opacity: "0"});
-            secondLast.animate({right: "0px", opacity: "1"});
-            
-            $("span").before($(secondLast));
-            
-            $("#second-row .ch").css({
-                width: "120px",
-                height: "140px"
-            });
-            
-            $("#second-row .ch:last-of-type").css({width: "150px", height: "160px"});
-        }, 300);
-
+        $("#second-row img:first-of-type").hide().appendTo("#second-row").fadeIn(600);
+        $("#second-row img").css({"margin": "0 3px"});
+       
     });
 
-    // Provide information in which direction the images are going, when hovering over arrow buttons
-
-    $("#right").css({opacity: "0"});
-    $("#left").css({opacity: "0"});
-
-    $("#arrow-left").mouseover(function(){
-        $("#left").css({display: "inline-block",
-            position: "relative", 
-            right: "0.1em", 
-            top: "2em",
-            opacity: "1",
-            transition: "opacity 0.5s linear",
+    $("#angle-br-left").mouseenter(function(){
+        $("#angle-br-left").css({
+            "background-color": " rgba(124, 128, 128, 0.8)",
+            "cursor": "pointer",
+            "left": "-4vw",
+            "transition": "all 0.2s"
         });
     });
 
-    $("#arrow-left").mouseleave(function(){
-        $("#left").css({opacity: "0"});
-    });
-
-    $("#arrow-right").mouseover(function(){
-        $("#right").css({display: "inline-block",
-            position: "relative", 
-            left: "1.2em", 
-            top: "2em",
-            opacity: "1",
-            transition: "opacity 0.5s linear",
+    $("#angle-br-left").mouseleave(function(){
+        $("#angle-br-left").css({
+            "background-color": " rgba(124, 128, 128, 0.2)",
+            "cursor": "pointer",
+            "left": "-7vw",
+            "transition": "all 0.2s"
         });
     });
 
-    $("#arrow-right").mouseleave(function(){
-        $("#right").css({opacity: "0"});
-    });  
+    $("#angle-br-right").mouseenter(function(){
+        $("#angle-br-right").css({
+            "background-color": " rgba(124, 128, 128, 0.8)",
+            "cursor": "pointer",
+            "left": "94vw",
+            "transition": "all 0.2s"
+        });
+    });
+
+    $("#angle-br-right").mouseleave(function(){
+        $("#angle-br-right").css({
+            "background-color": " rgba(124, 128, 128, 0.2)",
+            "cursor": "pointer",
+            "left": "96vw",
+            "transition": "all 0.2s"
+        });
+    });
 
 });
